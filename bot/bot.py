@@ -14,7 +14,11 @@ class MusicBot(commands.Bot):
     def __init__(self):
         self._cogs = [p.stem for p in Path(".").glob("./bot/cogs/*.py")]
 
-        super().__init__(command_prefix=self.prefix, case_insensitive=True, intents=discord.Intents.all())
+        super().__init__(
+            command_prefix=self.prefix,
+            case_insensitive=True,
+            intents=discord.Intents.all(),
+        )
 
     def setup(self):
         print("Starting up...")
